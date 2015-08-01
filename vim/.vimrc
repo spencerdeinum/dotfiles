@@ -25,12 +25,6 @@ set backspace=indent,eol,start
 syntax on
 filetype plugin indent on
 
-" 4 Spaces
-set expandtab
-set shiftwidth=4
-set softtabstop=4
-set autoindent
-
 set laststatus=2
 set showmatch
 set incsearch
@@ -50,8 +44,20 @@ set completeopt-=preview
 " Maps jj to <esc>
 inoremap jj <esc>
 
+" 4 Spaces
+set expandtab
+set shiftwidth=4
+set softtabstop=4
+set autoindent
+
 " bind key to set indent style to kernel coding style
 map <leader>k :set ai ts=8 sw=8 sts=8 textwidth=80 noet
+
+" Set ruby related files to 2 spaces
+autocmd FileType ruby,haml,eruby,yaml,sass,cucumber set ai sw=2 sts=2 et
+
+" Set these files to ruby syntax
+au BufRead,BufNewFile Vagrantfile,Rakefile,Capfile,Gemfile,.autotest,.irbrc,*.treetop,*.tt set ft=ruby syntax=ruby
 
 " Let the :Error window pop up automatically
 " let g:syntastic_auto_loc_list=1
@@ -63,19 +69,9 @@ map <leader>k :set ai ts=8 sw=8 sts=8 textwidth=80 noet
 " Add c++11 support
 " let g:syntastic_cpp_compiler_options = ' -std=c++11 '
 
-" Set ruby related files to 2 spaces
-autocmd FileType ruby,haml,eruby,yaml,sass,cucumber set ai sw=2 sts=2 et
-
-" Set these files to ruby syntax
-au BufRead,BufNewFile Vagrantfile,Rakefile,Capfile,Gemfile,.autotest,.irbrc,*.treetop,*.tt set ft=ruby syntax=ruby
-
-let g:airline_powerline_fonts = 1
-
+" ctrlp settings
+" clear cache with ctrl f
 map <c-f> :CtrlPClearAllCaches <enter>
-
 map <leader>t :CtrlPTag <enter>
-
+" piggyback off of git ls-files
 let g:ctrlp_user_command = ['.git', 'cd %s && { git ls-files; git ls-files -o --exclude-standard; } | cat']
-
-" Let airline display smart tab line
-let g:airline#extensions#tabline#enabled = 1
