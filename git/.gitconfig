@@ -1,0 +1,20 @@
+[core]
+	editor = vim
+[color]
+	ui = true
+[user]
+	name = Spencer Deinum
+	email = spencerdeinum@gmail.com
+[alias]
+	s = status
+	f = fetch
+	b = branch
+	p = pull -ff
+	amend = commit --amend
+	c = commit
+	u = submodule update --init
+	l = "log --graph --pretty"
+[push]
+	default = upstream
+[merge]
+	tool = vimdiff
