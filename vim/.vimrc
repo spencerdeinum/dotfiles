@@ -59,19 +59,19 @@ autocmd FileType ruby,haml,eruby,yaml,sass,cucumber set ai sw=2 sts=2 et
 " Set these files to ruby syntax
 au BufRead,BufNewFile Vagrantfile,Rakefile,Capfile,Gemfile,.autotest,.irbrc,*.treetop,*.tt set ft=ruby syntax=ruby
 
-" Let the :Error window pop up automatically
-" let g:syntastic_auto_loc_list=1
-" let g:syntastic_auto_jump=1
-
-" Disable syntastic for these filtypes
-" let g:syntastic_mode_map = { "passive_filetypes": ["html"] }
-
-" Add c++11 support
-" let g:syntastic_cpp_compiler_options = ' -std=c++11 '
-
 " ctrlp settings
 " clear cache with ctrl f
 map <c-f> :CtrlPClearAllCaches <enter>
 map <leader>t :CtrlPTag <enter>
 " piggyback off of git ls-files
 let g:ctrlp_user_command = ['.git', 'cd %s && { git ls-files; git ls-files -o --exclude-standard; } | cat']
+
+" Syntastic settings
+let g:syntastic_auto_jump=1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+" Disable syntastic for these filtypes
+let g:syntastic_mode_map = { "passive_filetypes": ["html"] }
+" Add c++11 support
+let g:syntastic_cpp_compiler_options = ' -std=c++11 '
