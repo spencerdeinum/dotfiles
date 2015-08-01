@@ -9,3 +9,4 @@ alias l='ls -hCF'
 export CLICOLOR=1
 
 PATH="$HOME/bin:$PATH"
+PATH="/usr/local/bin:$PATH"
