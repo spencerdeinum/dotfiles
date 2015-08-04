@@ -15,6 +15,6 @@
 	u = submodule update --init
 	l = "log --graph --pretty"
 [push]
-	default = upstream
+	default = simple
 [merge]
 	tool = vimdiff
