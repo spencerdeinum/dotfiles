@@ -59,6 +59,9 @@ autocmd FileType ruby,haml,eruby,yaml,sass,cucumber set ai sw=2 sts=2 et
 " Set these files to ruby syntax
 au BufRead,BufNewFile Vagrantfile,Rakefile,Capfile,Gemfile,.autotest,.irbrc,*.treetop,*.tt set ft=ruby syntax=ruby
 
+" Set md to markdown
+au BufRead,BufNewFile *.md set ft=markdown syntax=markdown
+
 " ctrlp settings
 " clear cache with ctrl f
 map <c-f> :CtrlPClearAllCaches <enter>
