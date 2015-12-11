@@ -5,6 +5,9 @@ alias ll='ls -halF'
 alias la='ls -hA'
 alias l='ls -hCF'
 
+# Of course
+export EDITOR=vim
+
 # Enable colourized output
 export CLICOLOR=1
 
