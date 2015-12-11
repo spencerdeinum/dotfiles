@@ -1,46 +1,38 @@
 "============================================================================
-"File:        gotype.vim
-"Description: Perform syntactic and semantic checking of Go code using 'gotype'
-"Maintainer:  luz <ne.tetewi@gmail.com>
+"File:        mixedindentlint.vim
+"Description: Mixed indentation linter for vim
+"Maintainer:  Payton Swick <payton@foolord.com>
 "License:     This program is free software. It comes without any warranty,
 "             to the extent permitted by applicable law. You can redistribute
 "             it and/or modify it under the terms of the Do What The Fuck You
 "             Want To Public License, Version 2, as published by Sam Hocevar.
 "             See http://sam.zoy.org/wtfpl/COPYING for more details.
-"
 "============================================================================
 
-if exists('g:loaded_syntastic_go_gotype_checker')
+if exists('g:loaded_syntastic_javascript_mixedindentlint_checker')
     finish
 endif
-let g:loaded_syntastic_go_gotype_checker = 1
+let g:loaded_syntastic_javascript_mixedindentlint_checker = 1
 
 let s:save_cpo = &cpo
 set cpo&vim
 
-function! SyntaxCheckers_go_gotype_GetLocList() dict
-    let makeprg = self.makeprgBuild({
-        \ 'args': (expand('%', 1) =~# '\m_test\.go$' ? '-a' : ''),
-        \ 'fname': '.' })
+function! SyntaxCheckers_javascript_mixedindentlint_GetLocList() dict
+    let makeprg = self.makeprgBuild({})
 
-    let errorformat =
-        \ '%f:%l:%c: %m,' .
-        \ '%-G%.%#'
-
-    " gotype needs the full go package to test types properly. Just cwd to
-    " the package for the same reasons specified in go.vim ("figuring out
-    " the import path is fickle").
+    let errorformat = 'Line %l in "%f" %.%#'
 
     return SyntasticMake({
         \ 'makeprg': makeprg,
         \ 'errorformat': errorformat,
-        \ 'cwd': expand('%:p:h', 1),
-        \ 'defaults': {'type': 'e'} })
+        \ 'subtype': 'Style',
+        \ 'defaults': { 'text': 'Indentation differs from rest of file' },
+        \ 'returns': [0, 1] })
 endfunction
 
 call g:SyntasticRegistry.CreateAndRegisterChecker({
-    \ 'filetype': 'go',
-    \ 'name': 'gotype'})
+    \ 'filetype': 'javascript',
+    \ 'name': 'mixedindentlint'})
 
 let &cpo = s:save_cpo
 unlet s:save_cpo
