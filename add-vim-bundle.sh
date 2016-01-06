@@ -7,6 +7,7 @@ function addBundle {
 if [[ $# -ne 2 ]]; then
     echo "usage: ./add-vim-bundle.sh [user] [github-repo]"
     echo "example: ./add-vim-bundle.sh kien ctrlp.vim"
+    exit
 fi
 
-addBundle $1 $2
+addBundle "$1" "$2"
