@@ -30,7 +30,7 @@ set showmatch
 set incsearch
 
 set background=dark
-colorscheme Tomorrow-Night-Bright
+colorscheme base16-tomorrow
 
 " Line numbers
 set number
