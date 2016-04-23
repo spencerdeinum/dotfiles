@@ -1,5 +1,25 @@
 " Use Vim settings
 set nocompatible
+
+" Vundle
+filetype off
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'tpope/vim-endwise'
+Plugin 'tpope/vim-eunuch'
+Plugin 'tpope/vim-fugitive'
+Plugin 'chriskempson/base16-vim'
+Plugin 'kien/ctrlp.vim'
+Plugin 'mattn/emmet-vim'
+Plugin 'othree/html5.vim'
+Plugin 'scrooloose/syntastic'
+Plugin 'vim-airline/vim-airline'
+Plugin 'airblade/vim-gitgutter'
+call vundle#end()
+
+filetype plugin indent on
+
 " Set term colours to 256
 set t_Co=256
 
@@ -7,9 +27,6 @@ set t_Co=256
 set autoread
 
 set encoding=utf-8
-
-" Pathogen
-call pathogen#infect()
 
 " Make searches case-sensitive only if they contain upper-case characters
 set ignorecase
