@@ -67,9 +67,6 @@ set shiftwidth=4
 set softtabstop=4
 set autoindent
 
-" bind key to set indent style to kernel coding style
-map <leader>k :set ai ts=8 sw=8 sts=8 textwidth=80 noet
-
 " Set ruby related files to 2 spaces
 autocmd FileType ruby,haml,eruby,yaml,sass,cucumber set ai sw=2 sts=2 et
 
