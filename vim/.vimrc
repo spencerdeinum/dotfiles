@@ -61,7 +61,7 @@ set completeopt-=preview
 " Maps jj to <esc>
 inoremap jj <esc>
 " Run all tests with leader t
-map <leader>t :! bin/rspec <enter>
+map <leader>g :! bin/rspec <enter>
 " Leader r maps the current spec file to be run with leader f
 map <leader>r :call SetRspecFile()<CR>
 function SetRspecFile()
