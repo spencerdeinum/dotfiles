@@ -16,6 +16,7 @@ Plugin 'othree/html5.vim'
 Plugin 'scrooloose/syntastic'
 Plugin 'vim-airline/vim-airline'
 Plugin 'airblade/vim-gitgutter'
+Plugin 'kchmck/vim-coffee-script'
 call vundle#end()
 
 filetype plugin indent on
