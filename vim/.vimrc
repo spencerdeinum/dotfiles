@@ -89,6 +89,7 @@ au BufRead,BufNewFile *.md set ft=markdown syntax=markdown
 " clear cache with ctrl f
 map <c-f> :CtrlPClearAllCaches <enter>
 map <leader>t :CtrlPTag <enter>
+let g:ctrlp_extensions = ['tag']
 " piggyback off of git ls-files
 let g:ctrlp_user_command = ['.git', 'cd %s && { git ls-files; git ls-files -o --exclude-standard; } | cat']
 
