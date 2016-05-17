@@ -15,7 +15,7 @@ PATH="$HOME/bin:$PATH"
 
 # Homebrew
 PATH="/usr/local/bin:$PATH"
-if [ -f $(brew --prefix)/etc/bash_completion ]; then
-    . $(brew --prefix)/etc/bash_completion
+if [ -f "$(brew --prefix)/etc/bash_completion" ]; then
+    . "$(brew --prefix)/etc/bash_completion"
 fi
 [[ -f ~/.homebrew_api_token ]] && . ~/.homebrew_api_token
